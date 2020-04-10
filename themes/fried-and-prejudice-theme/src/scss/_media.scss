@@ -1,0 +1,131 @@
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+//Media Queries 
+
+@mixin phone-size {
+  @media screen and (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin phablet-size {
+  @media screen and (min-width: $phablet-min-width) {
+    @content;
+  }
+}
+
+@mixin tablet-size {
+  @media screen and (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin desktop-size {
+  @media screen and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin large-desktop-size {
+  @media screen and (min-width: $large-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin extra-large-desktop-size {
+  @media screen and (min-width: $desktop-max-width) {
+    @content;
+  }
+}
+
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/* Captions */
+
+.wp-caption {
+  margin-bottom: $base__space-unit;
+  max-width: 100%;
+
+  img[class*='wp-image-'] {
+    @include center-block;
+  }
+
+  .wp-caption-text {
+    margin: 0.8075rem 0;
+  }
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+/* Galleries*/
+
+.gallery {
+  margin-bottom: $base__space-unit;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+
+  .gallery-columns-2 & {
+    max-width: 50%;
+  }
+
+  .gallery-columns-3 & {
+    max-width: 33.33%;
+  }
+
+  .gallery-columns-4 & {
+    max-width: 25%;
+  }
+
+  .gallery-columns-5 & {
+    max-width: 20%;
+  }
+
+  .gallery-columns-6 & {
+    max-width: 16.66%;
+  }
+
+  .gallery-columns-7 & {
+    max-width: 14.28%;
+  }
+
+  .gallery-columns-8 & {
+    max-width: 12.5%;
+  }
+
+  .gallery-columns-9 & {
+    max-width: 11.11%;
+  }
+}
+
+.gallery-caption {
+  display: block;
+}
+
+
+//mobile responsiveness
+

@@ -1,0 +1,169 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+  font-size: ($sizeValue * 16) * 1px;
+  font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+* HIGH PPI DISPLAY BACKGROUNDS
+*/
+
+@mixin background-2x(
+  $path,
+  $ext: 'png',
+  $w: auto,
+  $h: auto,
+  $pos: left top,
+  $repeat: no-repeat
+) {
+  $at1x_path: '#{$path}.#{$ext}';
+  $at2x_path: '#{$path}@2x.#{$ext}';
+
+  background-image: url('#{$at1x_path}');
+  background-size: $w $h;
+  background-position: $pos;
+  background-repeat: $repeat;
+
+  @media all and (-webkit-min-device-pixel-ratio: 1.5),
+    all and (-o-min-device-pixel-ratio: 3/2),
+    all and (min--moz-device-pixel-ratio: 1.5),
+    all and (min-device-pixel-ratio: 1.5) {
+    background-image: url('#{$at2x_path}');
+  }
+}
+
+@mixin submit-green-button($padding_vertical: 15px, $padding_horizontal: 30px) {
+  background: none $color_brand_orange;
+  cursor: pointer;
+  color: white;
+  font-family: $font__main;
+  font-size: 0.9rem;
+  padding: $padding_vertical $padding_horizontal;
+  box-shadow: none;
+  text-shadow: none;
+  border: 0;
+  border-radius: 0;
+  &:hover {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      $color_brand_orange;
+    box-shadow: none;
+  }
+}
+
+@mixin header-font($size: 'inherit', $color: 'inherit') {
+  font-family: $font__accent;
+  color: $color;
+  font-size: $size;
+}
+
+@mixin social-button() {
+  padding: 15px 30px;
+  background-color: white;
+  border: 1px black solid;
+  @include header-font(0.9rem, null);
+}
+
+@mixin read-more($color: 'inherit') {
+  @include header-font(null, null);
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 1px $color solid;
+  color: white;
+  &:hover {
+    background-color: #434343;
+    border: 1px #434343 solid;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@mixin read-more-blogs($color: 'inherit') {
+  @include header-font(null, null);
+  text-decoration: none;
+  padding: 15px 30px;
+  border: 1px $color solid;
+  color: $color-brand-orange;
+  &:hover {
+    background-color: $color-brand-orange;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+@mixin front-page-container() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 50px auto 0 auto;
+  padding-bottom: 50px;
+  width: 300px;
+  @include extra-large-desktop-size{
+    width: 1190px;
+  }
+
+
+}
+
+@mixin fix-end-margins() {
+  &:first-of-type {
+    margin-left: 0;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+@mixin hyperlinks() {
+  &:visited {
+    color: $color_brand_orange;
+  }
+  &:hover {
+    color: black;
+  }
+}
+
+// structure 
+
+@mixin phone-size {
+  @media screen and (min-width: $mobile-min-width) {
+    @content;
+  }
+}
+
+@mixin phablet-size {
+  @media screen and (min-width: $phablet-min-width) {
+    @content;
+  }
+}
+
+@mixin tablet-size {
+  @media screen and (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin desktop-size {
+  @media screen and (min-width: $desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin large-desktop-size {
+  @media screen and (min-width: $large-desktop-min-width) {
+    @content;
+  }
+}
+
+@mixin extra-large-desktop-size {
+  @media screen and (min-width: $desktop-max-width) {
+    @content;
+  }
+}

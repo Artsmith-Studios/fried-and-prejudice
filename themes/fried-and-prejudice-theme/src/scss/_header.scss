@@ -1,0 +1,111 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.logged-in {
+  .site-header {
+    margin-top: 32px;
+  }
+}
+
+.site-header {
+  display: none;
+  @media (min-width: 768px) {
+  z-index: 99;
+  width: 100%;
+  height: 55px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  font-family: $font__main;
+  position: fixed;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #e1e1e1;
+  }
+  
+
+  &.top {
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 0;
+    position: absolute;
+  }
+}
+
+.site-branding {
+  display: flex;
+  justify-content: flex-start;
+  width: 10%;
+  .img-div {
+    background-image: url(../../assets/images/vectors/fried-prejudice-logo-orange.png);
+    background-size: cover;
+    padding: 20px 20px;
+    &.top {
+      background-image: url(../../assets/images/vectors/fried-prejudice-logo-black.png);
+    }
+  }
+}
+
+.main-navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 70%;
+  .menu a {
+    padding: 8px;
+    color: $color_brand_orange;
+    font-size: 1rem;
+    &:hover {
+      color: black;
+    }
+  }
+  .menu a.top {
+    color: black;
+    &:hover {
+      color: $color_brand_orange;
+    }
+  }
+  .page_item a:active {
+    color: $color_brand_orange;
+  }
+  .search-form {
+    input {
+      background-color: $color_brand_orange;
+      border: none;
+      margin-left: 15px;
+      @include header-font(null, null);
+      &.top::placeholder {
+        color: $color_brand_yellow;
+      }
+      &:focus {
+        outline: 0;
+        color: white;
+      }
+      &.top:focus {
+        caret-color: $color_brand_yellow;
+        color: white;
+      }
+    }
+  }
+  .fas.fa-search {
+    margin-left: 15px;
+    color: $color_brand_orange;
+    &:hover {
+      color: black;
+    }
+    &.top {
+      color: black;
+    }
+    &.top:hover {
+      color: $color_brand_orange;
+    }
+  }
+}
+
+#responsive-menu-container #responsive-menu-wrapper {
+  background: #212121;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}

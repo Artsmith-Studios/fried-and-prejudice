@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+
+.widget-area {
+  width: 80%;
+  margin: 0 auto;
+  @include desktop-size {
+    width: 25%;
+    max-width: 315px;
+    padding-left: 4%;
+    padding-top: 60px;
+    border-left: 1px solid #e1e1e1;
+  }
+
+  .contact-meta {
+    display: flex;
+    align-items: flex-start;
+    color: black;
+    a {
+      @include hyperlinks();
+    }
+  }
+  .fa {
+    color: black;
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .widget-title {
+    @include header-font(1.5rem, black);
+    line-height: 37.5px;
+    letter-spacing: 2px;
+    & a {
+      color: black;
+    }
+  }
+  .widget {
+    a {
+      text-decoration: none;
+    }
+  }
+  li a {
+    @include hyperlinks();
+  }
+  .business-hours {
+    color: black;
+  }
+}
+

@@ -1,0 +1,47 @@
+/** 
+ * Product Single
+ */
+
+.product-single-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  @include desktop-size {
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .product-single-image {
+    text-align: center;
+    width: 100%;
+  }
+  .product-single-content {
+    max-width: 80%;
+    margin: 0 auto;
+    @include desktop-size {
+      width: 100%;
+    }
+    h1 {
+      @include header-font(2.4rem, $color_brand_orange);
+      margin-top: 0;
+      margin-bottom: 10px;
+      line-height: 1.25;
+      text-align: center;
+    }
+    .product-single-price {
+      @include header-font(1.8rem, null);
+      margin-top: 0;
+    }
+  }
+  .social-buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .black-btn {
+      @include social-button();
+    }
+    .fab {
+      font-size: 0.9rem;
+    }
+  }
+}

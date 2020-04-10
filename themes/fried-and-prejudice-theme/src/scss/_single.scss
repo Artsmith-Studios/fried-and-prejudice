@@ -1,0 +1,133 @@
+/** 
+ * Journal (main blog settings) single page 
+ */
+
+ .single-site-main {
+   width: 100vw;
+   @include desktop-size {
+     width: 100%;
+   }
+ }
+ .journal-content-area {
+   width: 80%;
+   margin: 0 auto;
+ }
+.journal-content-area,
+.single-content-area {
+  // width: 80%;
+  // margin: 0 auto;
+  @include desktop-size {
+    max-width: 850px;
+    padding: 100px;
+    margin: 0 auto;
+  }
+
+  article {
+    padding-bottom: 60px;
+  }
+}
+
+.journal-site-main {
+  h1 {
+    padding-bottom: 20px;
+    margin-bottom: 60px;
+    margin-top: 0;
+    border-bottom: 1px solid #e1e1e1;
+    font-family: $font__accent;
+    font-size: 1.6rem;
+    text-align: center;
+    @include desktop-size {
+      font-size: 2.4rem;
+    }
+
+  }
+}
+
+.journal-entry-header,
+.single-entry-header {
+  position: relative;
+  padding-right: 0;
+  img {
+    width: 100%;
+    display: block;
+  }
+  h1,
+  h2 {
+    @include header-font(2rem, white);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 30px;
+    background-color: $color_brand_orange;
+    margin-top: 45px;
+    line-height: 1.25;
+    width: 75%;
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .journal-entry-meta,
+  .single-entry-meta {
+    display: none;
+    @include phablet-size {
+      @include header-font(1.2rem, white);
+      display: block;
+      position: absolute;
+      bottom: 0%;
+      right: 0;
+      padding: 0px 30px;
+      background-color: $color_brand_orange;
+    }
+
+    .comments-link a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+.journal-entry-content {
+  p {
+    margin-bottom: 30px;
+  }
+  a {
+    @include read-more(black);
+  }
+}
+
+.single-entry-content {
+  width: 80%;
+  margin: 0 auto;
+  @include desktop-size {
+    width: 100%;
+  }
+}
+
+.single-entry-footer {
+  width: 80%;
+  margin: 0 auto;
+  @include desktop-size {
+    width: 100%;
+    margin: 0;
+  }
+  @include header-font(null, null);
+  .cat-links {
+    margin-right: 30px;
+  }
+  a {
+    color: $color_brand_orange;
+    text-decoration: none;
+  }
+  .social-buttons {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    .black-btn {
+      @include social-button();
+    }
+    .fab {
+      font-size: 0.9rem;
+    }
+  }
+}
+

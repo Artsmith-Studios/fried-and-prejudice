@@ -1,0 +1,717 @@
+/* 
+* Front Page
+*/
+.front-page-container {
+  flex-direction: column;
+  width: 100%;
+  @include desktop-size {
+    width: 100%;
+  }
+  h2 {
+    @include header-font(2.4rem, null);
+    font-weight: 200;
+    text-align: center;
+    padding-top: 40px;
+    text-transform: none;
+    font-display: swap;
+  }
+  .front-page-hero {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.1), 
+      rgba(0, 0, 0, 0.1)
+    ), 
+       url(../../assets/images/cover-photo.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    
+    .front-page-logo-description{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      flex-direction: column;
+      @include desktop-size {
+        flex-direction: row;
+      }
+      @include large-desktop-size {
+        height: 100%;
+        flex-wrap: none;
+        text-align: left;
+      }
+      .logo-title {
+        display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1rem;
+        #mobile-main-logo {
+          max-width: 50%;
+          @include tablet-size {
+            max-width: 30%;
+            padding-bottom: 1rem;
+          }
+          @include desktop-size {
+            display: none;
+          }
+        }
+        #desktop-main-logo {
+          display: none; 
+          @include desktop-size {
+            display: block; 
+            max-width: 25%;
+          }
+        }
+        .front-description {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          width: 100%;
+          .front-title {
+            color: black;
+            margin: 0;
+            font-weight: 400;
+            font-size: 1.6rem;
+            font-display: swap;
+            font-family: $font__accent;
+            @include tablet-size {
+              font-size: 2rem;
+            }
+            @include desktop-size {
+              font-size: 3rem;
+            }
+          }  
+          .front-subtitle {
+            color: black;
+            margin: 0;
+            font-family: $font__subtitle;
+            font-weight: 400;
+            font-size: 1rem;
+            font-display: swap;
+            @include tablet-size {
+              font-size: 1.3rem;
+            }
+            @include desktop-size {
+              font-size: 1.5rem;
+            }
+            #linebreak {
+              @include phablet-size {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+
+    }
+
+
+  }
+}
+.full-story {
+  background-color: #434343;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  @include desktop-size {
+    display: block;
+    height: auto;
+  }
+
+.full-story-two-column {
+  padding-bottom: 1rem;
+  @include desktop-size {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 3rem;
+  }
+  .full-story-description-half {
+    width: 90%;
+    margin: 0 auto;
+    @include desktop-size {
+      width: 40%;
+    }
+    .flex-logo {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 1rem;
+      .orange-logo {
+        display: none;
+        @include desktop-size {
+          display: block;
+          width: 20%;
+          height: auto;
+          text-align: center;
+        }
+  
+      }
+    }
+    .full-story-title {
+      color: $color_brand_orange;
+      text-align: center;
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 400;
+      font-display: swap;
+      font-family: $font__accent;
+      @include tablet-size {
+        font-size: 2rem;
+      }
+      @include desktop-size {
+        font-size: 2.5rem;
+      }
+      @include extra-large-desktop-size {
+        font-size: 3rem;
+        padding: 1rem 0;
+      }
+    }
+  }
+    .summary {
+      color: white;
+    }
+  }
+  .picture-half {
+    display: none; 
+    @include desktop-size{
+      display: flex;
+      width: 50%;
+      justify-content: center;
+      align-items: center;
+    }
+    .full-story-picture{
+      max-width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+.blogs{
+  background-color: $color_brand_orange;
+  width: 100vw;
+  height: 100%;
+  @include desktop-size {
+    height: auto;
+  }
+  .blogs-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    .what-brings-you-here-spoon {
+      display: none;
+      @include desktop-size {
+        display: block;
+        width: 5%;
+        height: 5%;
+        transform: rotate(270deg);
+      }
+    }
+    .what-brings-you-here-fork {
+      display: none;
+      @include desktop-size {
+        display: block;
+        width: 5%;
+        height: 5%;
+        transform: rotate(90deg);
+      }
+    }
+    .blogs-title {
+      color: #fff;
+      margin: 0;
+      font-size: 1.3rem;
+      padding-top: 0;
+      font-weight: 400;
+      font-display: swap;
+      font-family: $font__accent;
+      padding-top: 1rem;
+      @include desktop-size {
+        font-size: 3rem;
+        padding-top: 0;
+      }
+    }
+  }
+  .front-page-journal-container {
+    width: 100vw;
+    @include desktop-size {
+      width: 100%;
+    }
+    @include front-page-container();
+    article.post {
+      position: relative;
+      margin: 1%;
+      width: 382px;
+      box-shadow: 0px 3px 30px -3px rgba(0,0,0,0.75);
+      @include fix-end-margins();
+    }
+    img {
+      height: 250px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  }
+  .front-page-entry-meta {
+    padding: 15px;
+    height: 230px;
+    p {
+      width: 100vw;
+      font-size: 0.75rem;
+      margin: 0;
+      font-display: swap;
+    }
+    h3 {
+      @include header-font(1.3rem, null);
+      line-height: 1.25;
+      letter-spacing: 2px;
+      margin-top: 0;
+      margin-bottom: 30px;
+      font-display: swap;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+  .journal-read-more-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 0.75rem;
+    a {
+      @include read-more(white);
+    }
+  }
+}
+
+.ig-gallery {
+  background-color: #434343;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @include desktop-size {
+    height: auto;
+    display: block;
+  }
+  .flex-ig-logo {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1rem;
+  }
+  .ig-logo {
+    display: none;
+    @include desktop-size {
+      text-align: center;
+      width: 7%;
+      height: 7%;
+    }
+
+  }
+  .gallery-title {
+    margin: 0;
+    color: $color_brand_orange;
+    font-size: 2.7rem;
+    padding-top: 0;
+    font-weight: 400;
+    font-display: swap;
+    font-family: $font__accent;
+    @include desktop-size {
+      font-size: 3rem;
+    }
+  }
+  .insta-gallery-list {
+    margin: 0 auto !important;
+    width: 80%;
+  }
+}
+.insta-gallery-feed .insta-gallery-actions .insta-gallery-button.follow {
+  background-color: $color_brand_orange!important;
+}
+.contact-form {
+  background-color: #434343;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
+  @include desktop-size {
+    display: block;
+    height: auto;
+  }
+  .flex-logo {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    .orange-logo {
+      display: none;
+      @include desktop-size {
+        display: block;
+        width: 7%;
+        height: 7%;
+        text-align: center;
+      }
+
+    }
+  }
+
+  .contact-form-title {
+    color: $color_brand_orange;
+    text-align: center;
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-display: swap;
+    font-family: $font__accent;
+    @include tablet-size {
+      font-size: 2rem;
+    }
+    @include desktop-size {
+      font-size: 2.5rem;
+    }
+    @include extra-large-desktop-size {
+      font-size: 3rem;
+      padding: 1rem 0;
+    }
+  }
+}
+
+.contact-two-column {
+  padding-bottom: 1rem;
+  @include desktop-size {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    width: 100%;
+  }
+  .contact-half {
+    width: 90%;
+    margin: 0 auto;
+    @include desktop-size {
+      width: 50%;
+    }
+
+    .wpcf7-form {
+      padding: 1rem 0;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      @include desktop-size {
+        width: 80%;
+        margin: 0 auto;
+      }
+     p {
+       margin: 0;
+     }
+     .wpcf7-form-control {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      color: black;
+      
+     }
+     .your-message {
+       .wpcf7-form-control {
+         border: 1px solid #e1e1e1;
+       }
+     }
+    }
+    .wpcf7-submit {
+      background: none #E38A0F;
+      cursor: pointer;
+      color: #fff;
+      font-family: $font__main;
+      font-size: .9rem;
+      padding: 15px 60px;
+      box-shadow: none;
+      text-shadow: none;
+      border: 0;
+      border-radius: 0;
+    }
+
+  }
+  .picture-half {
+    display: none; 
+    @include desktop-size{
+      display: flex;
+      width: 50%;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-picture{
+      max-width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.faq-section {
+  background-color: #E38A0F;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  @include desktop-size {
+    height: auto;
+    padding: 50px;
+  }
+  .faq-header {
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    .faq-fork {
+      display: none;
+      @include desktop-size {
+        display: block;
+        height: 7%;
+        width: 7%;
+        transform: rotate(345deg);
+      }
+    }
+    .faq-spoon {
+      display: none; 
+      @include desktop-size {
+        display: block;
+        height: 7%;
+        width: 7%;
+        transform: rotate(15deg);
+      }
+    }
+    .faq-title {
+      height: 80%;
+      margin: auto 0;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 400;
+      font-display: swap;
+      font-family: $font__accent;
+      @include tablet-size {
+        font-size: 2rem;
+      }
+      @include desktop-size {
+        font-size: 2.5rem;
+      }
+      @include extra-large-desktop-size {
+        font-size: 3rem;
+        padding: 1rem 0;
+      }
+    }
+  }
+
+  .button {
+    text-align: center;
+    padding: 1rem 0;
+    .faq-button {
+      background: #434343;
+      box-shadow: none;
+      cursor: pointer;
+      color: #fff;
+      text-shadow: none;
+      border: 0;
+      border-radius: 0;
+      font-family: $font__main;
+      padding: 20px 60px;
+      font-size: 1.5rem;
+      @include tablet-size {
+        width: 30%;
+      }
+      @include desktop-size {
+        padding: 20px 20px;
+      }
+      @include extra-large-desktop-size {
+        height: auto;
+        width: 20%;
+        font-size: 2rem;
+      }
+
+    }
+  }
+}
+
+.affiliates {
+  background-color: $color_brand_orange;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  @include desktop-size {
+    height: auto;
+    padding: 50px;
+    justify-content: center;
+  }
+    .affiliates-title {
+      margin: 0;
+      color: #434343;
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 400;
+      font-family: $font__accent;
+      @include tablet-size {
+        font-size: 2rem;
+      }
+      @include desktop-size {
+        font-size: 2.5rem;
+      }
+      @include extra-large-desktop-size {
+        font-size: 3rem;
+        padding: 1rem 0;
+      }
+    }
+    .affiliate-list {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      @include tablet-size {
+        flex-direction: row;
+      }
+      @include desktop-size {
+        align-items: center;
+      }
+      @include extra-large-desktop-size {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      .affiliate-logo {
+        height: auto;
+        width: 30%;
+        text-align: center;
+        transition: transform .2s;
+        @include tablet-size {
+          width: 13%;
+          padding-bottom: 1rem;
+        }
+        @include desktop-size {
+          width: 9%;
+          padding: 0;
+        }
+        @include extra-large-desktop-size {
+          width: 7%;
+        }
+
+      }
+      .affiliate-logo:hover {
+        transform: scale(1.5);
+      }
+      .affiliate-fork {
+        display: none; 
+        @include desktop-size {
+          display: block; 
+          height: 7%;
+          width: 7%;
+          transform: rotate(180deg);
+        }
+      }
+      .affiliate-spoon {
+        display: none;
+        @include desktop-size {
+          display: block; 
+          height: 7%;
+          width: 7%;
+        }
+      }
+    }
+  }  
+
+  .look-at-me-section {
+    width: 100vw;
+    height: 100vh;
+    @include desktop-size {
+      height: auto;
+      padding: 50px;
+    }
+    .two-column {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+        .spoon-fork {
+          display: none;
+          @include desktop-size {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 100%;
+          }
+        .look-at-me-utensils {
+          width: 20%;
+          height: 20%;
+          transform: rotate(20deg);
+        }
+      }
+      .look-at-me-social {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        .look-at-me-title {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 400;
+          font-family: $font__accent;
+          @include tablet-size {
+            font-size: 2rem;
+          }
+          @include desktop-size {
+            font-size: 2.5rem;
+          }
+          @include extra-large-desktop-size {
+            font-size: 3rem;
+            padding: 1rem 0;
+          }
+        }
+        .social-row {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-evenly;
+          width: 100%;
+          @include extra-large-desktop-size {
+            justify-content: space-evenly;
+            width: 100%;
+          }
+          .social-logo {
+            width: 20%;
+            height: 20%;
+            transition: transform .2s; 
+            @include tablet-size {
+              width: 17%;
+              height: 17%;
+            }
+            @include desktop-size {
+              width: 15%;
+              height: 15%;
+            }
+          }
+          .social-logo:hover {
+            transform: scale(1.5); 
+          }
+        }
+      }
+    }
+  }

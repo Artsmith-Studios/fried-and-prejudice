@@ -1,0 +1,18 @@
+.journal-read-more-container {
+    a {
+      @include read-more-blogs($color_brand_orange);
+    }
+  }
+    .front-page-entry-meta {
+        p {
+            margin: 1rem 0;
+        }
+        .front-page-title {
+            a {
+                display: block !important
+            }
+        }
+        a {
+            display:none;
+        }
+    }

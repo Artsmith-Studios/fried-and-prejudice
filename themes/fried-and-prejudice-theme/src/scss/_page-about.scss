@@ -1,0 +1,46 @@
+/* 
+* About Page
+*/
+
+.about-content-area {
+  width: 100vw;
+  @include desktop-size {
+    width: 100%;
+    height: auto;
+  }
+  .hero-image-header {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(../../assets/images/cover-photo.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .entry-content {
+    margin-top: 0;
+
+      width: 100%;
+    
+  }
+  h1 {
+    color: white;
+    font-size: 3rem;
+    font-family: $font__accent;
+  }
+  h2 {
+    @include header-font(2.1rem, null);
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  p {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    @include phablet-size {
+      width: 80%;
+    }
+  }
+}
