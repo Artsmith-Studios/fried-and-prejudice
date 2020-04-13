@@ -44,40 +44,26 @@ get_header(); ?>
 
 		</div>
 		<div class="front-page-journal-container">
-			<?php
-			$journal_args = array(
-				'posts_per_page' => 3
-			);
-
-			$journal_posts = get_posts( $journal_args );
+		<?php
+			$categories = get_categories( array(
+				'orderby' => 'name',
+				'order'   => 'ASC'
+			) );
 			?>
-
-			<?php foreach ( $journal_posts as $post ) : setup_postdata( $post ); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-					<?php if ( has_post_thumbnail() ) : ?>
-
-						<?php the_post_thumbnail( 'large' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( 'post' === get_post_type() ) : ?>
-
-						<div class="front-page-entry-meta">
-							<p><?php fried_and_prejudice_posted_on(); ?>
-								/ <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></p>
-							<?php the_title( sprintf( '<h3 class="front-page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-						</div><!-- .entry-meta -->
-						<?php
-						echo '<div class="journal-read-more-container"><a href="' . esc_url( get_permalink() ) . '">Read more &rarr;</a></div>';
-						?>
-
-					<?php endif; ?>
-
-				</article><!-- #post-## -->
-
-			<?php endforeach; ?>
+			<div class="category-list">
+			<?php
+			foreach( $categories as $category ) {
+				$category_link = sprintf( 
+					'<a style="color: white !important;" href="%1$s" alt="%2$s">%3$s</a>',
+					esc_url( get_category_link( $category->term_id ) ),
+					esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+					esc_html( $category->name )
+				);
+				
+				echo '<p>' . sprintf( $category_link ) . '</p> ';
+				echo '<p>' . sprintf( $category->description ) . '</p>';
+			} ?>
+			</div> <!-- category list -->
 		</div> <!-- end of front-page-journal-container -->
 	</section>
 	
