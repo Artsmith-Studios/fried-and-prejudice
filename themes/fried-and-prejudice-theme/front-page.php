@@ -44,6 +44,7 @@ get_header(); ?>
 
 		</div>
 		<div class="front-page-journal-container">
+		
 		<?php
 			$categories = get_categories( array(
 				'orderby' => 'name',
@@ -53,17 +54,20 @@ get_header(); ?>
 			<div class="category-list">
 			<?php
 			foreach( $categories as $category ) {
+				//$bgimage = get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg';
+				echo '<div class="category-item" style="background-image: url(\'' . get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg\'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">';
 				$category_link = sprintf( 
 					'<a style="color: white !important;" href="%1$s" alt="%2$s">%3$s</a>',
 					esc_url( get_category_link( $category->term_id ) ),
-					esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+					esc_attr( sprintf( $category->name ) ),
 					esc_html( $category->name )
 				);
-				
 				echo '<p>' . sprintf( $category_link ) . '</p> ';
 				echo '<p>' . sprintf( $category->description ) . '</p>';
-			} ?>
+				echo '</div>';
+			} ?> <!-- end of foreach loop -->
 			</div> <!-- category list -->
+
 		</div> <!-- end of front-page-journal-container -->
 	</section>
 	
