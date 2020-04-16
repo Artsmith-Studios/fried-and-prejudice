@@ -70,15 +70,31 @@ get_header(); ?>
 
 		</div> <!-- end of front-page-journal-container -->
 	</section>
-	
-	<section class="ig-gallery">
-		<div class="flex-ig-logo">
-			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
-		</div>
-		<h2 class="gallery-title">Gallery</h2>
-		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
-	</section>
-	
+
+	<section class="featured-post"> <!-- Featured Blog post section -->
+		<h2 class="featured-post-title">Featured Blog Post</h2>
+		<?php
+			$args = array(
+					'posts_per_page' => 1,
+					'meta_key' => 'meta-checkbox',
+					'meta_value' => 'yes'
+				);
+				$featured = new WP_Query($args);
+			
+			if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
+			<h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
+			<p class="details">By <a href="<?php the_author_posts() ?>"><?php the_author(); ?> </a> / On <?php echo get_the_date('F j, Y'); ?> / In <?php the_category(', '); ?></p>
+			<?php if (has_post_thumbnail()) : ?>
+			
+			<figure> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> </figure>
+			<p ><?php the_excerpt();?></p>
+			<?php
+			endif;
+			endwhile; else:
+			endif;
+			?>
+	</section> <!-- end of Featured Blog Post Section -->
+
 	<section class="look-at-me-section">
 		<div class="two-column">
 			<div class="spoon-fork">
@@ -95,6 +111,17 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
+	
+	
+	<section class="ig-gallery">
+		<div class="flex-ig-logo">
+			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
+		</div>
+		<h2 class="gallery-title">Gallery</h2>
+		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
+	</section>
+	
+
 	
 	<section class="faq-section">
 		<div class="faq-content">
