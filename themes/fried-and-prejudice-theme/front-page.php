@@ -52,7 +52,11 @@ get_header(); ?>
 			) );
 			?>
 			<div class="category-list">
-			<?php
+			<div class="category-item" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/stock photos/Easy Recipes.jpg'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">
+			<p>Easy Recipes</p>
+			<p>Recipes</p>
+			</div>
+ 			<?php
 			foreach( $categories as $category ) {
 				//$bgimage = get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg';
 				echo '<div class="category-item" style="background-image: url(\'' . get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg\'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">';
@@ -107,6 +111,7 @@ get_header(); ?>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.facebook.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/facebook.png" alt="facebook-logo"/></a>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.instagram.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/instagram.png" alt="instagram-logo"/></a>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.zomato.com/friedandprejudice/foodjourney"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/zomato2.png" alt="zomato-logo"/></a>
+					<a class="social-logo" target='_blank' rel="noopener" href="https://iamdianenicole.wordpress.com/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/diane-nicole-logo.png" alt="zomato-logo"/></a>
 				</div>
 			</div>
 		</div>
@@ -130,9 +135,35 @@ get_header(); ?>
 				<h1 class="faq-title">Work With Me!</h1>
 				<!-- <img class="faq-spoon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-06.png" alt="spoon" /> -->
 			</div>
+			<?php
+		$args = array( 
+			'post_type' => array( 'posts', 'faq' ),
+			'posts_per_page' => 3
+		);
+		query_posts( $args );
+		while ( have_posts() ) : the_post(); ?>
+
+            <div class="faq_container">
+                
+
+                <div class="faq">
+
+					<?php the_title( '<h2 class="faq_question">', '</h2>' ); ?>
+
+                    <div class="faq_answer_container">
+
+						<?php the_content(); ?>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+		<?php endwhile; ?>
 			<div class="button">
 				<a style="text-decoration: none;" href="<?php echo get_permalink( get_page_by_path( 'faq' ) )?>">
-				<button class="faq-button">FAQ</button>
+				<button class="faq-button">Read More</button>
 				</a>
 			</div>
 		</div>
