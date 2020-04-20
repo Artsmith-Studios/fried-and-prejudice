@@ -44,51 +44,61 @@ get_header(); ?>
 
 		</div>
 		<div class="front-page-journal-container">
-			<?php
-			$journal_args = array(
-				'posts_per_page' => 3
-			);
-
-			$journal_posts = get_posts( $journal_args );
+		
+		<?php
+			$categories = get_categories( array(
+				'orderby' => 'name',
+				'order'   => 'ASC'
+			) );
 			?>
+			<div class="category-list">
+			<div class="category-item" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/stock photos/Easy Recipes.jpg'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">
+			<p>Easy Recipes</p>
+			<p>Recipes</p>
+			</div>
+ 			<?php
+			foreach( $categories as $category ) {
+				//$bgimage = get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg';
+				echo '<div class="category-item" style="background-image: url(\'' . get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg\'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">';
+				$category_link = sprintf( 
+					'<a style="color: white !important;" href="%1$s" alt="%2$s">%3$s</a>',
+					esc_url( get_category_link( $category->term_id ) ),
+					esc_attr( sprintf( $category->name ) ),
+					esc_html( $category->name )
+				);
+				echo '<p>' . sprintf( $category_link ) . '</p> ';
+				echo '<p>' . sprintf( $category->description ) . '</p>';
+				echo '</div>';
+			} ?> <!-- end of foreach loop -->
+			</div> <!-- category list -->
 
-			<?php foreach ( $journal_posts as $post ) : setup_postdata( $post ); ?>
-
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-					<?php if ( has_post_thumbnail() ) : ?>
-
-						<?php the_post_thumbnail( 'large' ); ?>
-
-					<?php endif; ?>
-
-					<?php if ( 'post' === get_post_type() ) : ?>
-
-						<div class="front-page-entry-meta">
-							<p><?php fried_and_prejudice_posted_on(); ?>
-								/ <?php comments_number( '0 Comments', '1 Comment', '% Comments' ); ?></p>
-							<?php the_title( sprintf( '<h3 class="front-page-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-						</div><!-- .entry-meta -->
-						<?php
-						echo '<div class="journal-read-more-container"><a href="' . esc_url( get_permalink() ) . '">Read more &rarr;</a></div>';
-						?>
-
-					<?php endif; ?>
-
-				</article><!-- #post-## -->
-
-			<?php endforeach; ?>
 		</div> <!-- end of front-page-journal-container -->
 	</section>
-	
-	<section class="ig-gallery">
-		<div class="flex-ig-logo">
-			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
-		</div>
-		<h2 class="gallery-title">Gallery</h2>
-		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
-	</section>
-	
+
+	<section class="featured-post"> <!-- Featured Blog post section -->
+		<h2 class="featured-post-title">Featured Blog Post</h2>
+		<?php
+			$args = array(
+					'posts_per_page' => 1,
+					'meta_key' => 'meta-checkbox',
+					'meta_value' => 'yes'
+				);
+				$featured = new WP_Query($args);
+			
+			if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
+			<h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
+			<p class="details">By <a href="<?php the_author_posts() ?>"><?php the_author(); ?> </a> / On <?php echo get_the_date('F j, Y'); ?> / In <?php the_category(', '); ?></p>
+			<?php if (has_post_thumbnail()) : ?>
+			
+			<figure> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> </figure>
+			<p ><?php the_excerpt();?></p>
+			<?php
+			endif;
+			endwhile; else:
+			endif;
+			?>
+	</section> <!-- end of Featured Blog Post Section -->
+
 	<section class="look-at-me-section">
 		<div class="two-column">
 			<div class="spoon-fork">
@@ -101,10 +111,22 @@ get_header(); ?>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.facebook.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/facebook.png" alt="facebook-logo"/></a>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.instagram.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/instagram.png" alt="instagram-logo"/></a>
 					<a class="social-logo" target='_blank' rel="noopener" href="https://www.zomato.com/friedandprejudice/foodjourney"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/zomato2.png" alt="zomato-logo"/></a>
+					<a class="social-logo" target='_blank' rel="noopener" href="https://iamdianenicole.wordpress.com/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/diane-nicole-logo.png" alt="zomato-logo"/></a>
 				</div>
 			</div>
 		</div>
 	</section>
+	
+	
+	<section class="ig-gallery">
+		<div class="flex-ig-logo">
+			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
+		</div>
+		<h2 class="gallery-title">Gallery</h2>
+		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
+	</section>
+	
+
 	
 	<section class="faq-section">
 		<div class="faq-content">
@@ -113,9 +135,35 @@ get_header(); ?>
 				<h1 class="faq-title">Work With Me!</h1>
 				<!-- <img class="faq-spoon" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-06.png" alt="spoon" /> -->
 			</div>
+			<?php
+		$args = array( 
+			'post_type' => array( 'posts', 'faq' ),
+			'posts_per_page' => 3
+		);
+		query_posts( $args );
+		while ( have_posts() ) : the_post(); ?>
+
+            <div class="faq_container">
+                
+
+                <div class="faq">
+
+					<?php the_title( '<h2 class="faq_question">', '</h2>' ); ?>
+
+                    <div class="faq_answer_container">
+
+						<?php the_content(); ?>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+		<?php endwhile; ?>
 			<div class="button">
 				<a style="text-decoration: none;" href="<?php echo get_permalink( get_page_by_path( 'faq' ) )?>">
-				<button class="faq-button">FAQ</button>
+				<button class="faq-button">Read More</button>
 				</a>
 			</div>
 		</div>

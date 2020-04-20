@@ -1,4 +1,3 @@
-
 # Ignore everything in "wp-content" except these directories. #
 /*
 !.gitignore
