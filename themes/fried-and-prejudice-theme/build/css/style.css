@@ -1162,6 +1162,36 @@ a {
     .archive-site-main {
       width: 100%; } }
 
+ul.bycategories {
+  margin: 0;
+  padding: 0; }
+
+ul.bycategories li {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+ul.bycategories li a {
+  list-style: none;
+  list-style-type: none;
+  margin: 0 20px 15px 0;
+  float: left;
+  background: #eee;
+  color: #464646;
+  padding: 5px 10px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+ul.bycategories li a:hover {
+  text-decoration: none;
+  background: #ff6200;
+  color: #fff; }
+
+.clear {
+  clear: both; }
+
 /* 
 * About Page
 */
@@ -1489,7 +1519,7 @@ a {
                 display: none; } }
 
 .full-story {
-  background-color: #434343;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   display: -webkit-box;
@@ -1763,10 +1793,10 @@ a {
     width: 80%; }
 
 .insta-gallery-feed .insta-gallery-actions .insta-gallery-button.follow {
-  background-color: #E38A0F !important; }
+  display: none !important; }
 
 .contact-form {
-  background-color: #434343;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100%;
   height: 100vh;
   display: -webkit-box;
