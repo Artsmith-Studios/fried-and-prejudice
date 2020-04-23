@@ -6,10 +6,8 @@
   width: 80%;
   margin: 0 auto;
   @include desktop-size {
-    width: 25%;
-    max-width: 315px;
-    padding-left: 4%;
-    padding-top: 60px;
+    width: 40%;
+    padding: 50px;
     border-left: 1px solid #e1e1e1;
   }
 

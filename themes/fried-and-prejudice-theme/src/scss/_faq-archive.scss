@@ -47,12 +47,22 @@
       margin-top: 0;
       margin-bottom: 0;
       font-display: swap;
+      text-align: left;
     }
     .faq_answer_container {
       color: black;
       font-display: swap;
       font-family: $font__main;
     }
+  }
+}
+
+.faq-section {
+  .faq_question {
+    color: $color_brand_orange;
+  }
+  .faq_answer_container {
+    color: white;
   }
 }
 

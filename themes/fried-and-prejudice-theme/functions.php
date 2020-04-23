@@ -137,7 +137,7 @@ add_action('wp_head', 'WordPress_backup');
 
 function the_excerpt_more_link( $excerpt ) {
 	$post    = get_post();
-	$excerpt .= '<a href="' . get_permalink( $post->ID ) . '">Read more &rarr;</i></a>';
+	$excerpt .= '<a class="continue-reading" href="' . get_permalink( $post->ID ) . '">Continue Reading &rarr;</i></a>';
 
 	return $excerpt;
 }
@@ -246,7 +246,41 @@ if( isset( $_POST[ 'meta-checkbox' ] ) ) {
  
 }
 add_action( 'save_post', 'sm_meta_save' );
+
+// Create single template for Easy Recipes Category 
+
+/*
+* Define a constant path to our single template folder
+*/
+define(SINGLE_PATH, TEMPLATEPATH . '/single');
+ 
+/**
+* Filter the single_template with our custom function
+*/
+add_filter('single_template', 'my_single_template');
+ 
+/**
+* Single template function which will choose our template
+*/
+function my_single_template($single) {
+global $wp_query, $post;
+ 
+/**
+* Checks for single template by category
+* Check by category slug and ID
+*/
+foreach((array)get_the_category() as $cat) :
+ 
+if(file_exists(SINGLE_PATH . '/single-cat-' . $cat->easy-recipes . '.php'))
+return SINGLE_PATH . '/single-cat-' . $cat->easy-recipes . '.php';
+ 
+elseif(file_exists(SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php'))
+return SINGLE_PATH . '/single-cat-' . $cat->term_id . '.php';
+ 
+endforeach;
+}
 ?>
+
 
 
 

@@ -10,7 +10,7 @@
   h2 {
     @include header-font(2.4rem, null);
     font-weight: 200;
-    text-align: center;
+    text-align: left;
     padding-top: 40px;
     text-transform: none;
     font-display: swap;
@@ -197,7 +197,7 @@
     }
   }
 }
-.blogs{
+.blogs {
   background-color: $color_brand_orange;
   width: 100vw;
   height: 100%;
@@ -261,6 +261,45 @@
       object-fit: cover;
       overflow: hidden;
     }
+    .category-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap; 
+      @include desktop-size {
+        justify-content: space-evenly;
+        width: 70%;
+        margin: 0 auto;
+      }
+      .category-item {
+        filter: grayscale(0%);
+        //box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        margin-bottom: .5rem;
+        position: relative;
+        &:hover {
+          filter: grayscale(100%);
+        }
+        .cat-title {
+          color: white;
+          position: absolute;
+          left: 0%;
+          top: 60%;
+          width: 100%;
+          text-align: center;
+          font-family: $font__subtitle;
+          font-size: 2rem;
+        }
+        .cat-description {
+          color: white;
+          position: absolute; 
+          left: 0%;
+          top: 80%;
+          width: 100%;
+          text-align: center;
+          font-family: $font__main;
+        }
+      } 
+    }
   }
   .front-page-entry-meta {
     padding: 15px;
@@ -294,8 +333,65 @@
   }
 }
 
+.featured-post {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  .featured-post-content {
+    width: 100%;
+    @include desktop-size {
+      display: flex;
+      flex-direction: row; 
+      justify-content: space-evenly;
+    }
+    .featured-post-thumbnail {
+      width: 50%;
+    }
+    .featured-post-text {
+      width: 90%;
+      margin: 0 auto;
+      @include desktop-size {
+        width: 40%;
+        text-align: center;
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      .details {
+        margin: 0;
+      }
+      .featured-post-content-title {
+        font-size: 3rem;
+        font-family: $font__accent;
+        margin: 1rem 0;
+      }
+      p {
+        color: white;
+        background-image: linear-gradient(to bottom, $color_brand_dgrey)
+      }
+      .continue-reading {
+      border: 4px solid rgb(255,153,51);
+      color: rgb(255,153,51);
+      font-size: 1rem;
+      padding: 5px 10px;
+      text-align: center;
+      width: 50%;
+      }
+    }
+  }
+  .featured-post-title {
+    color: white; 
+    text-align: center;
+    margin: 0;
+  }
+
+}
+
 .ig-gallery {
-  background-color: #434343;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -319,7 +415,10 @@
       width: 7%;
       height: 7%;
     }
-
+  }
+  #insta-gallery-feed-1 {
+    width: 90%;
+    margin: 0 auto;
   }
   .gallery-title {
     margin: 0;
@@ -445,32 +544,21 @@
     }
 
   }
-  .picture-half {
-    display: none; 
-    @include desktop-size{
-      display: flex;
-      width: 50%;
-      justify-content: center;
-      align-items: center;
-    }
-    .contact-picture{
-      max-width: 90%;
-      text-align: center;
-      margin: 0 auto;
-    }
-  }
 }
 
 .faq-section {
-  background-color: #E38A0F;
+  background-color: rgba(0, 0, 0, 0.8);
   width: 100vw;
-  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
   @include desktop-size {
     height: auto;
     padding: 50px;
+  }
+  .faq-content {
+    width: 90%;
+    margin: 0 auto;
   }
   .faq-header {
     display: flex;
@@ -504,6 +592,7 @@
       font-weight: 400;
       font-display: swap;
       font-family: $font__accent;
+      color: $color_brand_orange;
       @include tablet-size {
         font-size: 2rem;
       }
@@ -521,7 +610,7 @@
     text-align: center;
     padding: 1rem 0;
     .faq-button {
-      background: #434343;
+      background: $color_brand_orange;
       box-shadow: none;
       cursor: pointer;
       color: #fff;

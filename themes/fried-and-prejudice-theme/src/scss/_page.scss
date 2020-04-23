@@ -35,8 +35,8 @@
 
 .entry-title {
   @include header-font(2.4rem, null);
-  margin: 0;
-  margin-bottom: 10px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .wpcf7-form {

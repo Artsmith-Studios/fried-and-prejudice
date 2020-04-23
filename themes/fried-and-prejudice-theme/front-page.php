@@ -52,10 +52,6 @@ get_header(); ?>
 			) );
 			?>
 			<div class="category-list">
-			<div class="category-item" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/stock photos/Easy Recipes.jpg'); background-size: 100%; background-position: center; background-repeat: no-repeat; width: 300px; height: 300px;">
-			<p>Easy Recipes</p>
-			<p>Recipes</p>
-			</div>
  			<?php
 			foreach( $categories as $category ) {
 				//$bgimage = get_stylesheet_directory_uri() . '/assets/images/stock photos/' . $category->name . '.jpg';
@@ -66,8 +62,8 @@ get_header(); ?>
 					esc_attr( sprintf( $category->name ) ),
 					esc_html( $category->name )
 				);
-				echo '<p>' . sprintf( $category_link ) . '</p> ';
-				echo '<p>' . sprintf( $category->description ) . '</p>';
+				echo '<p class="cat-title">' . sprintf( $category_link ) . '</p> ';
+				echo '<p class="cat-description">' . sprintf( $category->description ) . '</p>';
 				echo '</div>';
 			} ?> <!-- end of foreach loop -->
 			</div> <!-- category list -->
@@ -76,7 +72,6 @@ get_header(); ?>
 	</section>
 
 	<section class="featured-post"> <!-- Featured Blog post section -->
-		<h2 class="featured-post-title">Featured Blog Post</h2>
 		<?php
 			$args = array(
 					'posts_per_page' => 1,
@@ -86,14 +81,20 @@ get_header(); ?>
 				$featured = new WP_Query($args);
 			
 			if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
-			<h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
+			<div class="featured-post-content">
+				<div class="featured-post-thumbnail">
+						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> 
+				</div>
+				<div class="featured-post-text">
+					<h2 class="featured-post-title">Featured Blog Post</h2>
+					<h3 class="featured-post-content-title"><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
 
-			<!--<p class="details">By <a href="<?php the_author_posts() ?>"><?php the_author(); ?> </a> / On <?php echo get_the_date('F j, Y'); ?> / In <?php the_category(', '); ?></p> -->
-			
-			<?php if (has_post_thumbnail()) : ?>
-			
-			<figure> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> </figure>
-			<p ><?php the_excerpt();?></p>
+					<p class="details"><?php echo get_the_date('F j, Y'); ?></p>
+					
+					<?php if (has_post_thumbnail()) : ?>
+					<?php the_excerpt();?>
+				</div>
+			</div>
 			<?php
 			endif;
 			endwhile; else:
@@ -101,11 +102,11 @@ get_header(); ?>
 			?>
 	</section> <!-- end of Featured Blog Post Section -->
 
-	<section class="look-at-me-section">
+	<section class="look-at-me-section" id="look-at-me">
 		<div class="two-column">
 			<div class="spoon-fork">
-				<!-- <img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-01.png" alt="fork"/> -->
-				<!-- <img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-04.png" alt="spoon"/> -->
+				<img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-01.png" alt="fork"/>
+				<img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-04.png" alt="spoon"/>
 			</div>
 			<div class="look-at-me-social">
 			<h1 class="look-at-me-title">Look At Me!</h1>
@@ -118,17 +119,6 @@ get_header(); ?>
 			</div>
 		</div>
 	</section>
-	
-	
-	<section class="ig-gallery">
-		<div class="flex-ig-logo">
-			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
-		</div>
-		<h2 class="gallery-title">Gallery</h2>
-		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
-	</section>
-	
-
 	
 	<section class="faq-section">
 		<div class="faq-content">
@@ -169,25 +159,31 @@ get_header(); ?>
 				</a>
 			</div>
 		</div>
-	</section> <!--end of work with me -->
+	</section> <!-- end of FAQ section -->
+	
+	<section class="ig-gallery" id="instagram">
+		<div class="flex-ig-logo">
+			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
+		</div>
+		<?php echo do_shortcode('[insta-gallery id="1"]')?>;
+	</section> <!-- end of Gallery -->
+	
 
 	<section class="contact-form">
 		<div class="flex-logo">
 			<img class="orange-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/fried-prejudice-logo-orange.png" alt="fried-prejudice-logo-orange"/>
 		</div>
 		<h1 class="contact-form-title">Talk To Me!</h1>
+		<p>You've reached my page! I'm off eating somewhere, so please leave a message and I'll get back to you ASAP!
 		<div class="contact-two-column">
 			<div class="contact-half">
 				<?php echo do_shortcode('[contact-form-7 id="17" title="Contact form 1"]') ?>
-			</div>
-			<div class="picture-half">
-				<img class="contact-picture" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/stock photos/new.jpg" alt="contact-image"/>
 			</div>
 		</div>
 	</section> <!--end of contact form -->
 
 
-	<section class="affiliates">
+	<section class="affiliates" id="affiliates-section">
 	<h1 class="affiliates-title">Affiliates</h1>
 		<div class="affiliate-list">
 		<!--	<img class="affiliate-fork" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-03.png" alt="fork" /> -->
