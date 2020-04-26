@@ -271,6 +271,9 @@
         width: 70%;
         margin: 0 auto;
       }
+      @include extra-large-desktop-size {
+        width: 85%;
+      }
       .category-item {
         filter: grayscale(0%);
         //box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
@@ -349,6 +352,11 @@
     }
     .featured-post-thumbnail {
       width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+  
     }
     .featured-post-text {
       width: 90%;
@@ -368,6 +376,11 @@
         font-size: 3rem;
         font-family: $font__accent;
         margin: 1rem 0;
+        a{
+          &:hover {
+            color: white;
+          }
+        }
       }
       p {
         color: white;
@@ -389,7 +402,7 @@
     margin: 0;
   }
 
-}
+
 
 .ig-gallery {
   height: 100vh;
@@ -490,6 +503,11 @@
   }
 }
 
+.contact-subtitle {
+  text-align: center;
+  color: white;
+}
+
 .contact-two-column {
   padding-bottom: 1rem;
   @include desktop-size {
@@ -503,6 +521,9 @@
     margin: 0 auto;
     @include desktop-size {
       width: 50%;
+    }
+    .wpcf7 {
+      text-align: center;
     }
 
     .wpcf7-form {
@@ -518,20 +539,21 @@
        margin: 0;
      }
      .wpcf7-form-control {
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
-      color: black;
+       border: none;
+       border-bottom: 2px white solid;
+       background-color: $color_brand_dgrey;
       
      }
      .your-message {
        .wpcf7-form-control {
-         border: 1px solid #e1e1e1;
+         border-bottom: 2px solid white;
+         background-color: $color_brand_dgrey;
        }
      }
     }
     .wpcf7-submit {
-      background: none #E38A0F;
+      background: none #E38A0F !important;
+      border-bottom: none !important;
       cursor: pointer;
       color: #fff;
       font-family: $font__main;
@@ -556,8 +578,16 @@
     height: auto;
     padding: 50px;
   }
+  .faq_container {
+    .faq_question {
+      color: $color_brand_orange;
+    }
+    .faq_answer_container {
+      color: white;
+    }
+  }
   .faq-content {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
   .faq-header {
@@ -731,7 +761,7 @@
     height: 100vh;
     @include desktop-size {
       height: auto;
-      padding: 50px;
+     // padding: 50px;
     }
     .two-column {
       display: flex;
@@ -740,20 +770,6 @@
       height: 100%;
       width: 80%;
       margin: 0 auto;
-        .spoon-fork {
-          display: none;
-          @include desktop-size {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            height: 100%;
-          }
-        .look-at-me-utensils {
-          width: 20%;
-          height: 20%;
-          transform: rotate(20deg);
-        }
-      }
       .look-at-me-social {
         display: flex;
         flex-direction: column;
@@ -778,27 +794,32 @@
         .social-row {
           display: flex;
           flex-direction: row;
-          justify-content: space-evenly;
+          justify-content: center;
           width: 100%;
           @include extra-large-desktop-size {
             justify-content: space-evenly;
             width: 100%;
           }
-          .social-logo {
-            width: 20%;
-            height: 20%;
-            transition: transform .2s; 
-            @include tablet-size {
-              width: 17%;
-              height: 17%;
-            }
-            @include desktop-size {
-              width: 15%;
-              height: 15%;
+          .look-at-me-utensils {
+            width: 27%;
+            height: 27%;
+          }
+          .social-logo-list {
+            display: flex;
+            justify-content: space-evenly;
+            //align-items: center;
+            .social-logo {
+              width: 20%;
+              height: 20%;
+              transition: transform .2s; 
+              @include tablet-size {
+                width: 15%;
+                height: 15%;
+              }
             }
           }
           .social-logo:hover {
-            transform: scale(1.5); 
+            transform: scale(1.2); 
           }
         }
       }

@@ -20,11 +20,11 @@ get_header(); ?>
 
 			<?php get_template_part( 'template-parts/content', '' ); ?>
 		
-            <p><strong>Categories:</strong></p>
-<ul class="bycategories">
-<?php wp_list_categories('title_li='); ?>
-</ul>
-<div class="clear"></div>
+        <p><strong>Categories:</strong></p>
+        <ul class="bycategories">
+        <?php wp_list_categories('title_li='); ?>
+        </ul>
+        <div class="clear"></div>
 		<?php endwhile; ?>
 
     </main><!-- #main -->

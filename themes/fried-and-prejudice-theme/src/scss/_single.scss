@@ -17,6 +17,7 @@
   // width: 80%;
   // margin: 0 auto;
   @include desktop-size {
+    max-width: 850px;
     padding: 100px;
     margin: 0 auto;
   }
@@ -52,6 +53,7 @@
   }
   h1,
   h2 {
+    @include header-font(2rem, white);
     position: absolute;
     top: 0;
     left: 0;
@@ -60,10 +62,6 @@
     margin-top: 45px;
     line-height: 1.25;
     width: 75%;
-    @include header-font(1rem, white);
-    @include tablet-size {
-      @include header-font(2rem, white);
-    }
     a {
       color: white;
       text-decoration: none;

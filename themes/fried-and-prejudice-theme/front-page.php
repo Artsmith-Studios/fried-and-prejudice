@@ -104,17 +104,16 @@ get_header(); ?>
 
 	<section class="look-at-me-section" id="look-at-me">
 		<div class="two-column">
-			<div class="spoon-fork">
-				<img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-01.png" alt="fork"/>
-				<img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-04.png" alt="spoon"/>
-			</div>
-			<div class="look-at-me-social">
-			<h1 class="look-at-me-title">Look At Me!</h1>
-				<div class="social-row">
-					<a class="social-logo" target='_blank' rel="noopener" href="https://www.facebook.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/facebook.png" alt="facebook-logo"/></a>
-					<a class="social-logo" target='_blank' rel="noopener" href="https://www.instagram.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/instagram.png" alt="instagram-logo"/></a>
-					<a class="social-logo" target='_blank' rel="noopener" href="https://www.zomato.com/friedandprejudice/foodjourney"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/zomato2.png" alt="zomato-logo"/></a>
-					<a class="social-logo" target='_blank' rel="noopener" href="https://iamdianenicole.wordpress.com/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/diane-nicole-logo.png" alt="zomato-logo"/></a>
+				<div class="look-at-me-social">
+					<h1 class="look-at-me-title">Look At Me!</h1>
+					<div class="social-row">
+					<img class="look-at-me-utensils" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/spoon-fork.png" alt="spoon-fork"/>
+						<div class="social-logo-list">
+							<a class="social-logo" target='_blank' rel="noopener" href="https://www.facebook.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/facebook.png" alt="facebook-logo"/></a>
+							<a class="social-logo" target='_blank' rel="noopener" href="https://www.instagram.com/friedandprejudice/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/instagram.png" alt="instagram-logo"/></a>
+							<a class="social-logo" target='_blank' rel="noopener" href="https://www.zomato.com/friedandprejudice/foodjourney"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/zomato2.png" alt="zomato-logo"/></a>
+							<a class="social-logo" target='_blank' rel="noopener" href="https://iamdianenicole.wordpress.com/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/diane-nicole-logo.png" alt="zomato-logo"/></a>
+						</div>				
 				</div>
 			</div>
 		</div>
@@ -174,7 +173,7 @@ get_header(); ?>
 			<img class="orange-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/fried-prejudice-logo-orange.png" alt="fried-prejudice-logo-orange"/>
 		</div>
 		<h1 class="contact-form-title">Talk To Me!</h1>
-		<p>You've reached my page! I'm off eating somewhere, so please leave a message and I'll get back to you ASAP!
+		<p class="contact-subtitle">You've reached my page! I'm off eating somewhere, so please leave a message and I'll get back to you ASAP!
 		<div class="contact-two-column">
 			<div class="contact-half">
 				<?php echo do_shortcode('[contact-form-7 id="17" title="Contact form 1"]') ?>
