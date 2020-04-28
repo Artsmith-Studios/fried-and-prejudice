@@ -50,7 +50,7 @@
         align-items: center;
         line-height: 1rem;
         #mobile-main-logo {
-          max-width: 50%;
+          max-width: 70%;
           @include tablet-size {
             max-width: 30%;
             padding-bottom: 1rem;
@@ -63,7 +63,7 @@
           display: none; 
           @include desktop-size {
             display: block; 
-            max-width: 25%;
+            max-width: 50%;
           }
         }
         .front-description {
@@ -88,7 +88,7 @@
           .front-subtitle {
             color: black;
             margin: 0;
-            font-family: $font__subtitle;
+            font-family: $font__main;
             font-weight: 400;
             font-size: 1rem;
             font-display: swap;
@@ -338,29 +338,37 @@
 
 .featured-post {
   background-color: rgba(0, 0, 0, 0.8);
-  height: 100vh;
-  width: 100vw;
+  height: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   .featured-post-content {
     width: 100%;
+    margin: 2rem 0;
     @include desktop-size {
       display: flex;
       flex-direction: row; 
       justify-content: space-evenly;
+      width: 90%;
+      margin: 1rem auto;
     }
     .featured-post-thumbnail {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      width: 80%;
+      margin: 1rem auto;
+      @include desktop-size {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
   }
   
     }
     .featured-post-text {
       width: 90%;
       margin: 0 auto;
+      text-align: center;
       @include desktop-size {
         width: 40%;
         text-align: center;
@@ -372,8 +380,13 @@
       .details {
         margin: 0;
       }
+      .featured-post-title {
+        color: white; 
+        text-align: center;
+        margin: 0;
+      }
       .featured-post-content-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-family: $font__accent;
         margin: 1rem 0;
         a{
@@ -393,14 +406,14 @@
       padding: 5px 10px;
       text-align: center;
       width: 50%;
+      &:hover {
+        color: white;
+        border: 4px solid white;
+      }
       }
     }
   }
-  .featured-post-title {
-    color: white; 
-    text-align: center;
-    margin: 0;
-  }
+
 
 
 
@@ -506,6 +519,8 @@
 .contact-subtitle {
   text-align: center;
   color: white;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .contact-two-column {
@@ -542,18 +557,20 @@
        border: none;
        border-bottom: 2px white solid;
        background-color: $color_brand_dgrey;
-      
+       color: white;
+       outline: none;
      }
      .your-message {
        .wpcf7-form-control {
          border-bottom: 2px solid white;
          background-color: $color_brand_dgrey;
+         color: white;
        }
      }
     }
     .wpcf7-submit {
-      background: none #E38A0F !important;
-      border-bottom: none !important;
+      background: transparent !important;
+      border-bottom: 2px white solid;
       cursor: pointer;
       color: #fff;
       font-family: $font__main;
@@ -563,6 +580,10 @@
       text-shadow: none;
       border: 0;
       border-radius: 0;
+      &:hover {
+        background: white !important; 
+        color: black;
+      }
     }
 
   }
@@ -581,6 +602,7 @@
   .faq_container {
     .faq_question {
       color: $color_brand_orange;
+      margin: 0;
     }
     .faq_answer_container {
       color: white;
@@ -640,16 +662,19 @@
     text-align: center;
     padding: 1rem 0;
     .faq-button {
-      background: $color_brand_orange;
-      box-shadow: none;
-      cursor: pointer;
-      color: #fff;
+      border: 4px solid rgb(255,153,51);
+      color: rgb(255,153,51);
+      font-size: 1rem;
+      padding: 5px 10px;
+      text-align: center;
+      width: 50%;
+      background-color: transparent;
       text-shadow: none;
-      border: 0;
-      border-radius: 0;
-      font-family: $font__main;
-      padding: 20px 60px;
-      font-size: 1.5rem;
+      box-shadow: none;
+      &:hover {
+        color: white;
+        border: 4px solid white;
+      }
       @include tablet-size {
         width: 30%;
       }
@@ -690,10 +715,11 @@
         font-size: 2rem;
       }
       @include desktop-size {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        margin: 2rem 0;
       }
       @include extra-large-desktop-size {
-        font-size: 3rem;
+        font-size: 3.5rem;
         padding: 1rem 0;
       }
     }
@@ -784,10 +810,10 @@
             font-size: 2rem;
           }
           @include desktop-size {
-            font-size: 2.5rem;
+            font-size: 3rem;
           }
           @include extra-large-desktop-size {
-            font-size: 3rem;
+            font-size: 3.5rem;
             padding: 1rem 0;
           }
         }
@@ -801,8 +827,13 @@
             width: 100%;
           }
           .look-at-me-utensils {
-            width: 27%;
-            height: 27%;
+            display: none;
+            @include desktop-size {
+              width: 27%;
+              height: 27%;
+              display: block;
+            }
+
           }
           .social-logo-list {
             display: flex;

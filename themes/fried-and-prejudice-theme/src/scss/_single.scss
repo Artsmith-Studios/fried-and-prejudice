@@ -7,6 +7,12 @@
    @include desktop-size {
      width: 100%;
    }
+   .navigation-links {
+     display: flex;
+     justify-content: space-evenly;
+     width: 80%;
+     margin: 1rem auto;
+   }
  }
  .journal-content-area {
    width: 80%;
@@ -41,6 +47,14 @@
     }
 
   }
+  .front-page-journal-container {
+    .front-page-title {
+      font-size: 1.3rem;
+      @include desktop-size {
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 .journal-entry-header,
@@ -53,15 +67,23 @@
   }
   h1,
   h2 {
-    @include header-font(2rem, white);
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 15px 30px;
-    background-color: $color_brand_orange;
-    margin-top: 45px;
-    line-height: 1.25;
-    width: 75%;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: $color_brand_orange;
+    @include tablet-size {
+      text-align: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 15px 30px;
+      background-color: $color_brand_orange;
+      opacity: 0.9;
+      margin-top: 45px;
+      line-height: 1.25;
+      width: 75%;
+      @include header-font(1.5rem, white);
+    }
     a {
       color: white;
       text-decoration: none;
@@ -70,7 +92,7 @@
   .journal-entry-meta,
   .single-entry-meta {
     display: none;
-    @include phablet-size {
+    @include tablet-size {
       @include header-font(1.2rem, white);
       display: block;
       position: absolute;
@@ -128,6 +150,19 @@
     .fab {
       font-size: 0.9rem;
     }
+  }
+}
+.index-footer {
+  border-top: 2px solid #e1e1e1;
+  border-bottom: 2px solid #e1e1e1;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  @include desktop-size {
+    border: none;
+    padding: 0;
+  }
+  .cat-title {
+    margin: 0;
   }
 }
 

@@ -10,7 +10,10 @@
 <div class="front-page-journal-container">
 			<?php
 			$journal_args = array(
-			
+				'post_type'      => 'post',
+				'posts_per_page' => '5',
+				'ignore_sticky_posts' => 1,//this is the one :)
+				'paged' => $paged,   
 			);
 
 			$journal_posts = get_posts( $journal_args );
@@ -43,4 +46,5 @@
 				</article><!-- #post-## -->
 
 			<?php endforeach; ?>
+	
 		</div> <!-- end of front-page-journal-container -->

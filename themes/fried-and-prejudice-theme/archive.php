@@ -7,9 +7,9 @@ get_header(); ?>
 <div id="primary" class="site-content">
 <div id="content" class="archive-site-main" role="main">
  
+<h1 class="entry-title">Category: <?php single_cat_title(); ?></h1>
 <?php while ( have_posts() ) : the_post(); ?>
                  
-<h1 class="entry-title"><?php the_title(); ?></h1>
  
 <div class="entry-content">
 <?php if ( has_post_thumbnail() ) : ?>
@@ -23,18 +23,19 @@ get_header(); ?>
 	<?php the_excerpt() ?>
 </div><!-- .entry-meta -->
 <?php echo '<div class="journal-read-more-container"><a href="' . esc_url( get_permalink() ) . '">Read more &rarr;</a></div>';?>
- 
-<p><strong>Categories:</strong></p>
-<ul class="bycategories">
-<?php wp_list_categories('title_li='); ?>
-</ul>
-<div class="clear"></div>
- 
- 
- 
+
 </div><!-- .entry-content -->
  
 <?php endwhile; // end of the loop. ?>
+
+	<div class="archive-footer">
+		<p class="cat-title"><strong>Categories:</strong></p>
+		<ul class="bycategories">
+		<?php wp_list_categories('title_li='); ?>
+		</ul>
+		<div class="clear"></div>
+		<?php wp_pagenavi(); ?>
+	</div>
  
 </div><!-- #content -->
 </div><!-- #primary -->

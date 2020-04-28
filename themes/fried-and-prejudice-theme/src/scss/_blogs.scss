@@ -16,3 +16,38 @@
             display:none;
         }
     }
+
+.index-footer {
+    .cat-title {
+      font-family: $font__accent;
+      font-size: 1.5rem;
+    }
+    ul.bycategories {
+      margin: 0;
+      padding: 0;
+      }
+      ul.bycategories li {
+      list-style: none; 
+      list-style-type: none;
+      margin: 0; 
+      padding: 0;
+      }
+      ul.bycategories li a {
+      list-style: none; 
+      list-style-type: none;
+      margin: 0 20px 15px 0; 
+      float: left; 
+      background: #eee; 
+      color: #464646; 
+      padding: 5px 10px;
+      border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      -webkit-border-radius: 5px;
+      }
+      ul.bycategories li a:hover{
+      text-decoration: none; 
+      background: #ff6200; 
+      color: #fff;
+      }
+      .clear{clear: both;}
+}

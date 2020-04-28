@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-<div class="front-page-container">
+<div class="front-page-container" id="section-0">
     <div class="front-page-hero hero-image-header">
 		<div class="front-page-logo-description">
 			<div class="logo-title">
@@ -21,7 +21,7 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<section class="full-story">
+	<section class="full-story" id="section-1">
 		<div class="full-story-two-column">
 			<div class="full-story-description-half">
 			<!--	<div class="flex-logo">
@@ -102,7 +102,7 @@ get_header(); ?>
 			?>
 	</section> <!-- end of Featured Blog Post Section -->
 
-	<section class="look-at-me-section" id="look-at-me">
+	<section class="look-at-me-section" id="section-2">
 		<div class="two-column">
 				<div class="look-at-me-social">
 					<h1 class="look-at-me-title">Look At Me!</h1>
@@ -119,7 +119,7 @@ get_header(); ?>
 		</div>
 	</section>
 	
-	<section class="faq-section">
+	<section class="faq-section" id="section-3">
 		<div class="faq-content">
 			<div class="faq-header">
 				<!-- <img class="faq-fork" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-03.png" alt="fork" /> -->
@@ -154,13 +154,13 @@ get_header(); ?>
 		<?php endwhile; ?>
 			<div class="button">
 				<a style="text-decoration: none;" href="<?php echo get_permalink( get_page_by_path( 'faq' ) )?>">
-				<button class="faq-button">Read More</button>
+				<button class="faq-button">Read More &rarr;</button>
 				</a>
 			</div>
 		</div>
 	</section> <!-- end of FAQ section -->
 	
-	<section class="ig-gallery" id="instagram">
+	<section class="ig-gallery" id="section-4">
 		<div class="flex-ig-logo">
 			<img class="ig-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/hey2.png" alt="instagram-logo"/>
 		</div>
@@ -168,7 +168,7 @@ get_header(); ?>
 	</section> <!-- end of Gallery -->
 	
 
-	<section class="contact-form">
+	<section class="contact-form" id="section-5">
 		<div class="flex-logo">
 			<img class="orange-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/fried-prejudice-logo-orange.png" alt="fried-prejudice-logo-orange"/>
 		</div>
@@ -182,11 +182,11 @@ get_header(); ?>
 	</section> <!--end of contact form -->
 
 
-	<section class="affiliates" id="affiliates-section">
+	<section class="affiliates" id="section-6">
 	<h1 class="affiliates-title">Affiliates</h1>
 		<div class="affiliate-list">
 		<!--	<img class="affiliate-fork" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/utensils-03.png" alt="fork" /> -->
-			<a class="affiliate-logo" rel="noopener" href="https://www.wheninmanila.com/author/diane-nicole-go/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/WIM-Logo.jpg" alt="when-in-manila-logo" /></a>
+			<a class="affiliate-logo" rel="noopener" href="https://www.wheninmanila.com/author/diane-nicole-go/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/WIM-Logo.png" alt="when-in-manila-logo" /></a>
 			<a class="affiliate-logo" rel="noopener" href="https://www.zomato.com/friedandprejudice" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/zomato.jpg" alt="zomato-logo"/></a>
 			<a class="affiliate-logo" rel="noopener" href="https://www.instagram.com/welovetoeatph/?igshid=nl0b072pqair" target="_blank"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/we-love-to-eat.jpg" alt="we-love-to-eat-logo"/></a>
 			<img class="affiliate-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/affiliates/foodmnl_logo.png" alt="food-mnl-logo"/>
