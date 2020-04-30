@@ -40,3 +40,12 @@
     }
   }
 }
+
+#responsive-menu-container .responsive-menu-search-box {
+  @media screen and (max-width: 767px){
+    height: 30px !important;
+  }
+}
+#responsive-menu-button {
+  box-shadow: none;
+}

@@ -17,7 +17,10 @@ get_header(); ?>
         </div>
 
 		<?php
-		$args = array( 'post_type' => array( 'posts', 'faq' ) );
+		$args = array( 
+			'post_type' => array( 'posts', 'faq' ),
+			'posts_per_page' => 10
+		);
 		query_posts( $args );
 		while ( have_posts() ) : the_post(); ?>
 

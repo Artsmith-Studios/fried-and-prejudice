@@ -28,10 +28,12 @@ get_header(); ?>
 					<img class="orange-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/fried-prejudice-logo-orange.png" alt="fried-prejudice-logo-orange"/>
 				</div> -->
 			<h1 class="full-story-title">The Full Story</h1>
-				<p class="summary">I love writing and food, so I put those together to come up with Fried & Prejudice. <br><br> Fried & Prejudice is my passion project, which has gained more traction since its humble beginings in the year 2016. Here, I featured unbiased restaurant reviews from resetaurants all over Asia (though I focus more on my home country, the Philippines) for the foodies, while I have some recipes for the home cooks and aspiring chefs. I even feature some goodies and snacks that I've tried out! <br><br> By all means, take a look around. I hope you enjoy the unqiue content I have to offer, and that it makes you love food just as much as I do.</p>
+				<!-- <p class="summary">I love writing and food, so I put those together to come up with Fried & Prejudice. <br><br> Fried & Prejudice is my passion project, which has gained more traction since its humble beginings in the year 2016. Here, I featured unbiased restaurant reviews from resetaurants all over Asia (though I focus more on my home country, the Philippines) for the foodies, while I have some recipes for the home cooks and aspiring chefs. I even feature some goodies and snacks that I've tried out! <br><br> By all means, take a look around. I hope you enjoy the unqiue content I have to offer, and that it makes you love food just as much as I do.</p> -->
+				<p class="summary"><?php echo CFS()->get( 'about' )?></p>		
 			</div>
 			<div class="picture-half">
-				<img class="full-story-picture" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/stock photos/new.jpg" alt="contact-image"/>
+				<!-- <img class="full-story-picture" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/stock photos/new.jpg" alt="contact-image"/> -->
+				<img class="full-story-picture" src="<?php echo CFS()->get( 'about_picture' ) ?>" alt="contact-image"/>
 			</div>
 		</div>
 	</section> <!--end of full story -->
@@ -82,6 +84,8 @@ get_header(); ?>
 			
 			if ($featured->have_posts()): while($featured->have_posts()): $featured->the_post(); ?>
 			<div class="featured-post-content">
+			<h2 class="featured-post-title-mobile">Featured Blog Post</h2>
+
 				<div class="featured-post-thumbnail">
 						<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a> 
 				</div>
@@ -169,14 +173,17 @@ get_header(); ?>
 	
 
 	<section class="contact-form" id="section-5">
-		<div class="flex-logo">
+		<!-- <div class="flex-logo">
 			<img class="orange-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/vectors/fried-prejudice-logo-orange.png" alt="fried-prejudice-logo-orange"/>
-		</div>
-		<h1 class="contact-form-title">Talk To Me!</h1>
-		<p class="contact-subtitle">You've reached my page! I'm off eating somewhere, so please leave a message and I'll get back to you ASAP!
+		</div> -->
 		<div class="contact-two-column">
 			<div class="contact-half">
+				<h1 class="contact-form-title">Talk To Me!</h1>
+				<p class="contact-subtitle">You've reached my page! I'm off eating somewhere, so please leave a message and I'll get back to you ASAP!
 				<?php echo do_shortcode('[contact-form-7 id="17" title="Contact form 1"]') ?>
+			</div>
+			<div class="picture-half">
+				<img class="contact-photo" src="<?php echo get_stylesheet_directory_uri() ?>/assets/images/stock photos/talk-to-me.jpg" alt="contact-photo" />
 			</div>
 		</div>
 	</section> <!--end of contact form -->

@@ -740,7 +740,7 @@ a {
     .site-header {
       z-index: 99;
       width: 100%;
-      height: 55px;
+      height: 65px;
       padding-top: 10px;
       padding-bottom: 10px;
       display: -webkit-box;
@@ -769,7 +769,7 @@ a {
   .site-branding .img-div {
     background-image: url(../../assets/images/vectors/fried-prejudice-logo-orange.png);
     background-size: cover;
-    padding: 20px 20px; }
+    padding: 25px 25px; }
     .site-branding .img-div.top {
       background-image: url(../../assets/images/vectors/fried-prejudice-logo-black.png); }
 
@@ -787,7 +787,7 @@ a {
   .main-navigation .menu a {
     padding: 8px;
     color: #E38A0F;
-    font-size: 1rem; }
+    font-size: 1.3rem; }
     .main-navigation .menu a:hover {
       color: black; }
   .main-navigation .menu a.top {
@@ -855,7 +855,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #434343; }
+  background-color: rgba(0, 0, 0, 0.8); }
 
 .site-info {
   height: 35px;
@@ -958,6 +958,14 @@ a {
       text-decoration: none; }
     .search-content-area .search-site-main p {
       margin-bottom: 30px; }
+
+@media screen and (max-width: 767px) {
+  #responsive-menu-container .responsive-menu-search-box {
+    height: 30px !important; } }
+
+#responsive-menu-button {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
 
 /* 
   * 404 Page
@@ -1513,7 +1521,7 @@ a {
           max-width: 70%; }
           @media screen and (min-width: 620px) {
             .front-page-container .front-page-hero .front-page-logo-description .logo-title #mobile-main-logo {
-              max-width: 30%;
+              max-width: 40%;
               padding-bottom: 1rem; } }
           @media screen and (min-width: 1080px) {
             .front-page-container .front-page-hero .front-page-logo-description .logo-title #mobile-main-logo {
@@ -1555,13 +1563,24 @@ a {
             font-family: "Roboto", sans-serif;
             font-weight: 400;
             font-size: 1rem;
-            font-display: swap; }
+            font-display: swap;
+            width: 70%;
+            margin: 0 auto;
+            text-align: center; }
             @media screen and (min-width: 620px) {
               .front-page-container .front-page-hero .front-page-logo-description .logo-title .front-description .front-subtitle {
-                font-size: 1.3rem; } }
+                font-size: 1.3rem;
+                width: auto;
+                margin: 0; } }
             @media screen and (min-width: 1080px) {
               .front-page-container .front-page-hero .front-page-logo-description .logo-title .front-description .front-subtitle {
                 font-size: 1.5rem; } }
+            @media screen and (min-width: 1440px) {
+              .front-page-container .front-page-hero .front-page-logo-description .logo-title .front-description .front-subtitle {
+                font-size: 1.7rem; } }
+            @media screen and (min-width: 1920px) {
+              .front-page-container .front-page-hero .front-page-logo-description .logo-title .front-description .front-subtitle {
+                font-size: 2rem; } }
             @media screen and (min-width: 450px) {
               .front-page-container .front-page-hero .front-page-logo-description .logo-title .front-description .front-subtitle #linebreak {
                 display: none; } }
@@ -1601,6 +1620,12 @@ a {
         width: 100%;
         height: 100%;
         padding: 3rem; } }
+    @media screen and (min-width: 1440px) {
+      .full-story .full-story-two-column {
+        padding: 5rem; } }
+    @media screen and (min-width: 1920px) {
+      .full-story .full-story-two-column {
+        padding: 8rem; } }
     .full-story .full-story-two-column .full-story-description-half {
       width: 90%;
       margin: 0 auto; }
@@ -1707,7 +1732,7 @@ a {
     .blogs .blogs-header .blogs-title {
       color: #fff;
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.7rem;
       padding-top: 0;
       font-weight: 400;
       font-display: swap;
@@ -1716,7 +1741,7 @@ a {
       @media screen and (min-width: 1080px) {
         .blogs .blogs-header .blogs-title {
           font-size: 3rem;
-          padding-top: 0; } }
+          padding-top: 2rem; } }
   .blogs .front-page-journal-container {
     width: 100vw;
     display: -webkit-box;
@@ -1840,7 +1865,7 @@ a {
 
 .featured-post {
   background-color: rgba(0, 0, 0, 0.8);
-  height: auto;
+  height: 100vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1852,23 +1877,40 @@ a {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly; }
+  @media screen and (min-width: 1080px) {
+    .featured-post {
+      height: auto; } }
   .featured-post .featured-post-content {
     width: 100%;
-    margin: 2rem 0; }
+    margin: 2rem 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 100vh; }
     @media screen and (min-width: 1080px) {
       .featured-post .featured-post-content {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
-        -webkit-box-pack: space-evenly;
-            -ms-flex-pack: space-evenly;
-                justify-content: space-evenly;
         width: 90%;
-        margin: 1rem auto; } }
+        margin: 2rem auto;
+        height: auto; } }
+    .featured-post .featured-post-content .featured-post-title-mobile {
+      color: white;
+      text-align: center;
+      margin: 0 auto;
+      width: 60%; }
+      @media screen and (min-width: 1080px) {
+        .featured-post .featured-post-content .featured-post-title-mobile {
+          display: none; } }
     .featured-post .featured-post-content .featured-post-thumbnail {
       width: 80%;
       margin: 1rem auto; }
@@ -1907,15 +1949,28 @@ a {
             -ms-flex-align: center;
                 align-items: center; } }
     .featured-post .featured-post-text .details {
-      margin: 0; }
+      margin: 1rem 0;
+      display: block !important; }
+    .featured-post .featured-post-text p {
+      display: none; }
+      @media screen and (min-width: 1080px) {
+        .featured-post .featured-post-text p {
+          display: block; } }
     .featured-post .featured-post-text .featured-post-title {
-      color: white;
-      text-align: center;
-      margin: 0; }
+      display: none; }
+      @media screen and (min-width: 1080px) {
+        .featured-post .featured-post-text .featured-post-title {
+          display: block;
+          color: white;
+          text-align: center;
+          margin: 0; } }
     .featured-post .featured-post-text .featured-post-content-title {
-      font-size: 2.5rem;
       font-family: "Sanchez", sans-serif;
-      margin: 1rem 0; }
+      margin: 1rem 0;
+      font-size: 1.7rem; }
+      @media screen and (min-width: 1080px) {
+        .featured-post .featured-post-text .featured-post-content-title {
+          font-size: 2.5rem; } }
       .featured-post .featured-post-text .featured-post-content-title a:hover {
         color: white; }
     .featured-post .featured-post-text p {
@@ -1928,7 +1983,8 @@ a {
       font-size: 1rem;
       padding: 5px 10px;
       text-align: center;
-      width: 50%; }
+      width: 50%;
+      border-radius: 5px; }
       .featured-post .featured-post-text .continue-reading:hover {
         color: white;
         border: 4px solid white; }
@@ -2024,30 +2080,6 @@ a {
           width: 7%;
           height: 7%;
           text-align: center; } }
-  .contact-form .contact-form-title {
-    color: #E38A0F;
-    text-align: center;
-    margin: 0;
-    font-size: 1.7rem;
-    font-weight: 400;
-    font-display: swap;
-    font-family: "Sanchez", sans-serif; }
-    @media screen and (min-width: 620px) {
-      .contact-form .contact-form-title {
-        font-size: 2rem; } }
-    @media screen and (min-width: 1080px) {
-      .contact-form .contact-form-title {
-        font-size: 2.5rem; } }
-    @media screen and (min-width: 1920px) {
-      .contact-form .contact-form-title {
-        font-size: 3rem;
-        padding: 1rem 0; } }
-
-.contact-subtitle {
-  text-align: center;
-  color: white;
-  width: 80%;
-  margin: 0 auto; }
 
 .contact-two-column {
   padding-bottom: 1rem; }
@@ -2064,12 +2096,51 @@ a {
           -ms-flex-pack: center;
               justify-content: center;
       width: 100%; } }
+  @media screen and (min-width: 1080px) and (min-width: 1440px) {
+    .contact-two-column {
+      width: 95%;
+      margin: 0 auto; } }
   .contact-two-column .contact-half {
     width: 90%;
     margin: 0 auto; }
     @media screen and (min-width: 1080px) {
       .contact-two-column .contact-half {
-        width: 50%; } }
+        width: 50%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly; } }
+    .contact-two-column .contact-half .contact-form-title {
+      color: #E38A0F;
+      text-align: center;
+      padding-top: 1rem;
+      margin: 0;
+      font-size: 1.7rem;
+      font-weight: 400;
+      font-display: swap;
+      font-family: "Sanchez", sans-serif; }
+      @media screen and (min-width: 620px) {
+        .contact-two-column .contact-half .contact-form-title {
+          font-size: 2rem; } }
+      @media screen and (min-width: 1080px) {
+        .contact-two-column .contact-half .contact-form-title {
+          font-size: 2.5rem;
+          margin: 1rem 0; } }
+      @media screen and (min-width: 1920px) {
+        .contact-two-column .contact-half .contact-form-title {
+          font-size: 3rem;
+          padding: 0; } }
+    .contact-two-column .contact-half .contact-subtitle {
+      text-align: center;
+      color: white;
+      width: 90%;
+      margin: 1rem auto; }
     .contact-two-column .contact-half .wpcf7 {
       text-align: center; }
     .contact-two-column .contact-half .wpcf7-form {
@@ -2109,11 +2180,32 @@ a {
       -webkit-box-shadow: none;
               box-shadow: none;
       text-shadow: none;
-      border: 0;
-      border-radius: 0; }
+      border: 0; }
       .contact-two-column .contact-half .wpcf7-submit:hover {
         background: white !important;
+        border-radius: 5px;
         color: black; }
+  .contact-two-column .picture-half {
+    display: none; }
+    @media screen and (min-width: 1080px) {
+      .contact-two-column .picture-half {
+        width: 50%;
+        text-align: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
+    .contact-two-column .picture-half .contact-photo {
+      width: 65%; }
 
 .faq-section {
   background-color: rgba(0, 0, 0, 0.8);
@@ -2134,7 +2226,11 @@ a {
       padding: 50px; } }
   .faq-section .faq_container .faq_question {
     color: #E38A0F;
-    margin: 0; }
+    margin: 0;
+    font-size: 1.7rem; }
+    @media screen and (min-width: 1080px) {
+      .faq-section .faq_container .faq_question {
+        font-size: 2.5rem; } }
   .faq-section .faq_container .faq_answer_container {
     color: white; }
   .faq-section .faq-content {
@@ -2209,7 +2305,8 @@ a {
           width: 30%; } }
       @media screen and (min-width: 1080px) {
         .faq-section .button .faq-button {
-          padding: 20px 20px; } }
+          padding: 10px 15px;
+          width: 25%; } }
       @media screen and (min-width: 1920px) {
         .faq-section .button .faq-button {
           height: auto;
@@ -2233,6 +2330,9 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  @media screen and (min-width: 620px) {
+    .affiliates {
+      height: 50vh; } }
   @media screen and (min-width: 1080px) {
     .affiliates {
       height: auto;
@@ -2247,12 +2347,8 @@ a {
     font-size: 3rem;
     font-weight: 400;
     font-family: "Sanchez", sans-serif; }
-    @media screen and (min-width: 620px) {
-      .affiliates .affiliates-title {
-        font-size: 2rem; } }
     @media screen and (min-width: 1080px) {
       .affiliates .affiliates-title {
-        font-size: 3rem;
         margin: 2rem 0; } }
     @media screen and (min-width: 1920px) {
       .affiliates .affiliates-title {
@@ -2273,13 +2369,14 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%;
-    height: auto; }
+    height: 100vh; }
     @media screen and (min-width: 620px) {
       .affiliates .affiliate-list {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
-                flex-direction: row; } }
+                flex-direction: row;
+        height: auto; } }
     @media screen and (min-width: 1080px) {
       .affiliates .affiliate-list {
         -webkit-box-align: center;
@@ -2362,12 +2459,9 @@ a {
       height: 100%; }
       .look-at-me-section .two-column .look-at-me-social .look-at-me-title {
         text-align: center;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 400;
         font-family: "Sanchez", sans-serif; }
-        @media screen and (min-width: 620px) {
-          .look-at-me-section .two-column .look-at-me-social .look-at-me-title {
-            font-size: 2rem; } }
         @media screen and (min-width: 1080px) {
           .look-at-me-section .two-column .look-at-me-social .look-at-me-title {
             font-size: 3rem; } }

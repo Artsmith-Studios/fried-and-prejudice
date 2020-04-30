@@ -12,7 +12,7 @@
   @media (min-width: 768px) {
   z-index: 99;
   width: 100%;
-  height: 55px;
+  height: 65px;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
@@ -39,7 +39,7 @@
   .img-div {
     background-image: url(../../assets/images/vectors/fried-prejudice-logo-orange.png);
     background-size: cover;
-    padding: 20px 20px;
+    padding: 25px 25px;
     &.top {
       background-image: url(../../assets/images/vectors/fried-prejudice-logo-black.png);
     }
@@ -54,7 +54,7 @@
   .menu a {
     padding: 8px;
     color: $color_brand_orange;
-    font-size: 1rem;
+    font-size: 1.3rem;
     &:hover {
       color: black;
     }
